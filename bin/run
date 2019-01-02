@@ -1,0 +1,5 @@
+!#usr/bin/env ruby
+
+require_relative '../lib/Gem_Wars.rb'
+
+GemWars::API.get_info

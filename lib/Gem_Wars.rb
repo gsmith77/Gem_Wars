@@ -1,5 +1,6 @@
 require 'pry'
-require 'open_uri'
+require 'open-uri'
 
 require_relative "Gem_Wars/version.rb"
+require_relative "Gem_Wars/API.rb"
 require_relative "Gem_Wars/Cli.rb"
