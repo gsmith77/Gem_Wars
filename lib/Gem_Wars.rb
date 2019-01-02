@@ -1,6 +1,5 @@
-require "Gem_Wars/version"
+require 'pry'
+require 'open_uri'
 
-module GemWars
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "Gem_Wars/version.rb"
+require_relative "Gem_Wars/Cli.rb"
