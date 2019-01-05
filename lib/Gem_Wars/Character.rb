@@ -1,9 +1,9 @@
-class GemWars::Characters
+class GemWars::Character
 
-  @@all = []
-  
+  @@all = {}
+
   attr_accessor :obj, :name, :type, :genres, :summary
-  
+
   def initialize(obj)
     @obj = obj
     @name = obj["name"]
@@ -14,16 +14,29 @@ class GemWars::Characters
         self.send("#{method}=", arg)
       end
     end
-    @@all << self
+    binding.pry
+    @film_urls = obj["films"]
+    @@all[obj["url"]] = self
   end
-  
+
   def self.info
     #binding.pry
     info = GemWars::API.get_info
     results = info.map do |object_info|
-      GemWars::Characters.new(object_info)
+      GemWars::Character.new(object_info)
     end
     results
+  end
+
+  def self.all
+    @@all
+  end
+
+  def films
+    #maps overs over the film_urls and makes film objects
+    @film_urls.map do |url|
+      film.all[url]
+    end
   end
 
 end

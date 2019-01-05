@@ -2,4 +2,5 @@
 
 require_relative '../lib/Gem_Wars.rb'
 
-GemWars::Characters.info
+GemWars::Character.info
+binding.pry
